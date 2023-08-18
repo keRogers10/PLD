@@ -37,10 +37,10 @@ def display_businesses():
     for key, business in businesses.items():
         print(f"ID: {key}")
         print(f"Name: {business['name']}")
-        print(f"Description: {business['description']}")
-        print(f"Address: {business['address']}")
-        print(f"Phone: {business['phone']}")
-        print(f"Website: {business['website']}")
+        print(f"Description: {the business['description']}")
+        print(f"Address: {the business['address']}")
+        print(f"Phone: {the business['phone']}")
+        print(f"Website: {the business['website']}")
         print()
         
 while True:
