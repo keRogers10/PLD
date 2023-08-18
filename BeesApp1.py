@@ -27,14 +27,28 @@ def add_business():
         json.dump(businesses, f)
     
     # Insert data into MySQL database
-    try:
-        connection = mysql.connector.connect(
-            host="remote_host",
-            user="root@localhost",
-            password=" ",
-            database="Business_information_hub"
-        )
-        cursor = connection.cursor()
+    # ... Other code ...
+
+try:
+    connection = mysql.connector.connect(
+        host="remote_host",
+        user="root@localhost",
+        password=" ",
+        database="Business_information_hub"
+    )
+    cursor = connection.cursor()
+
+    # ... Rest of the code ...
+
+except mysql.connector.Error as error:
+    print("Error: {}".format(error))
+finally:
+    if connection.is_connected():
+        cursor.close()
+        connection.close()
+
+# ... Rest of the code ...
+
 
         sql_insert_query = "INSERT INTO businesses (name, description, address, phone, website) VALUES (%s, %s, %s, %s, %s)"
         insert_data = (new_business['name'], new_business['description'], new_business['address'], new_business['phone'], new_business['website'])
