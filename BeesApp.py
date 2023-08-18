@@ -1,6 +1,6 @@
 import json
 
-# Load businesses from json file
+# Load available businesses from json file
 with open('businesses.json', 'r') as f:
     businesses = json.load(f)
 
